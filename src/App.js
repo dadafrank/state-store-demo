@@ -1,5 +1,6 @@
 import React, { useEffect, useReducer } from 'react'
 import { initState, dispatchState } from './reducer/index'
+import PageOne from './pages/pageOne/pageOne.js'
 import './App.css';
 
 function App() {
@@ -19,6 +20,13 @@ function App() {
   return (
     <div className="App">
       {state.demo}
+      <div
+        style={{
+          marginTop: '30px'
+        }}
+      >
+        <PageOne />
+      </div>
     </div>
   );
 }

@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useReducer } from 'react'
+import { Context, initState, dispatchState } from '../../reducer/pageOneManager'
 
-const pageOne = () => {
+import PageOneChild from './pageOneChild'
+
+const PageOne = () => {
+
+	const [state, dispatch] = useReducer(dispatchState, initState)
+
   return (
-    <div></div>
+  	<Context.Provider value={{ state, dispatch }}>
+  		<div>第一页</div>
+  		<PageOneChild />
+  	</Context.Provider>
   )
 }
 
-export default pageOne;
+export default PageOne;
